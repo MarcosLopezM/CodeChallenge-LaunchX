@@ -19,6 +19,6 @@ describe("Requirement 2: Get students' emails if they have a certification", () 
         const students = require("./certificated_students.json");
         const result = StudentService.filterCertificatedStudents(students);
 
-        expect(result.length).toBe(6);
+        expect(result.length).toBe(5);
     });
 });
