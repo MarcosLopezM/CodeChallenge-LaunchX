@@ -2,13 +2,13 @@ const StudentsController = require("./../../lib/controllers/StudentsController")
 
 describe("Requirement 1: Returning list of students with all its attributes", () => {
     test("Testing if the methods returns an array", () => {
-        const students = StudentsController.getExplorers();
+        const students = StudentsController.getStudents();
 
         expect(typeof students).toMatch(/object/);
     });
 
     test("Testing if the method returns at least one student and if the students has all its attributes", () => {
-        const students = StudentsController.getExplorers();
+        const students = StudentsController.getStudents();
 
         expect(students.length).toBeGreaterThanOrEqual(1);
         expect(students[0].id).not.toBeUndefined();
