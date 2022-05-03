@@ -35,3 +35,19 @@ describe("Requirement 2: Returning list of emails of certificated students", () 
         expect(students[0]).toMatch(/Todd@visualpartnership.xyz/);
     });
 });
+
+describe("Requirement 3: Returning list of students with credits over 500", () => {
+    test("Testing if the method returns at least one student", () => {
+        const studentsByCredits = StudentsController.getStudentsByCredits();
+
+        expect(studentsByCredits.length).toBeGreaterThanOrEqual(1);
+        expect(studentsByCredits.length).toBe(27);
+    });
+
+    test("Testing attributes of elements of array", () => {
+        const studentsByCredits = StudentsController.getStudentsByCredits();
+
+        expect(studentsByCredits[0].credits).toBeGreaterThan(500);
+        expect(studentsByCredits[0].enrollments).toContain("Visual Thinking Intermedio");
+    });
+});
