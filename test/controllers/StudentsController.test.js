@@ -20,3 +20,18 @@ describe("Requirement 1: Returning list of students with all its attributes", ()
         expect(students[0].haveCertification).toBeTruthy();
     });
 });
+
+describe("Requirement 2: Returning list of emails of certificated students", () => {
+    test("Testing if at least one student is certificated", () => {
+        const students = StudentsController.getEmailsOfCertificatedStudents();
+
+        expect(students.length).toBeGreaterThanOrEqual(1);
+        expect(students).not.toBeUndefined();
+    });
+
+    test("Testing if the method returns an email", () => {
+        const students = StudentsController.getEmailsOfCertificatedStudents();
+
+        expect(students[0]).toMatch(/Todd@visualpartnership.xyz/);
+    });
+});
